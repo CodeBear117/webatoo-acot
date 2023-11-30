@@ -1,0 +1,331 @@
+______________________________________________________________________________________________________________________
+
+Copyright 2021 - Webatoo Design Australia - www.webatoo.com.au
+Webatoo Design Australia designs and develops websites for small Australia businesses
+-------------------------------------------------------------------------------------
+This code is intended for use by andydcotton.com as developed by Webatoo Design Australia.
+Sections of this code have been repurposed from various online sources in good faith.
+------------------------------------------------------------------------------------------
+!CHANGES TO THIS CODE IS STRONGLY CAUTIONED AGAINST!
+Doing so may result in website content breaking or becoming unusable.
+Webatoo is not responsible for any crash or bug fixes if this code document has been found to be edited in any way. 
+-------------------------------------------------------------------------------------------------------------------
+The code below defines the visual style and functionality of the "CV" modal box within andydcotton.com
+The code was devloped by the team at Webatoo Design Australia.
+V 1.1 
+26.10.2021
+-------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        #modal_cv {
+            position: fixed;
+            left: 20%;
+            top: 60%;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        #modalHeader_cv {
+            display: grid;
+            grid-template-columns: 11fr 1fr;
+            cursor: move;
+            z-index: 10;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #faf0d0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        /* The Modal (background) */
+        .modal_cv {
+            display: none;
+            /* Hidden by default */
+
+            min-width: 600px;
+            width: auto;
+            /* Full width */
+            overflow: auto;
+            /* Enable scroll if needed */
+        }
+
+        /* Modal Content */
+        .modalContent_cv {
+            background-color: #faf0d0;
+            margin: auto;
+            padding-left: 2px;
+            padding-right: 2px;
+            border-radius: 15px;
+            padding-bottom: 2px;
+        }
+
+        .modalInnerContent_cv {
+            padding: 3px;
+            padding-bottom: 3px;
+            background-color: #262626;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* The Close Button */
+        .close_cv {
+            color: #000;
+            display: inline-flex;
+            align-items: center;
+            font-family: helvetica;
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 6px;
+            font-weight: normal;
+            width: 18px;
+            height: 18px;
+            max-height: 30px;
+            border: 2px solid #000;
+        }
+
+        .close_cv:hover,
+        .close_cv:focus {
+            background-color: #faf0d0;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.2);
+            color: #000;
+            text-decoration: none;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+
+        /* The CV Download Button */
+        .download_cv {
+            background-color: #faf0d0;
+            color: #000;
+            border-radius: 10px;
+            align-items: center;
+            font-family: helvetica;
+            text-align: center;
+            width: 120px;
+            height: 40px;
+        }
+
+        .download_cv:hover,
+        .download_cv:focus {
+            background-color: #faf0d0;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.2);
+            color: #000;
+            text-decoration: none;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+
+        /* Jello modal entrance animation */
+        .jello_animation {
+            -webkit-animation: jello-horizontal 0.9s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
+            animation: jello-horizontal 0.9s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
+        }
+
+        @-webkit-keyframes jello-horizontal {
+            0% {
+                -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+            }
+
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes jello-horizontal {
+            0% {
+                -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+            }
+
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tab Button -->
+    <input type="image" name="cv_Tab" onmouseover="hovercv.call(this)" onmouseout="unhovercv.call(this)"
+        onclick="displayModal_cv()" id="tabImage_cv"
+        src="https://andydcotton.com/wp-content/uploads/2021/10/cv_closed.png" width=90vw height=auto alt="cv_Icon">
+
+
+    <!-- The Modal -->
+    <div id="modal_cv" class="modal_cv jello_animation">
+
+        <!-- Modal content -->
+        <div class="modalContent_cv">
+            <div ID="modalHeader_cv">
+                <div></div>
+                <span class="close_cv">x</span>
+            </div>
+            <div class="modalInnerContent_cv">
+                <div>
+                    <h1 style="padding-top:3px">CV DOWNLOAD</h1>
+                    <div> <a href="https://andydcotton.com/wp-content/uploads/2021/10/Cotton_Andrew_CV.pdf"
+                            download="Cotton_Andrew_CV.pdf"><button type="button"
+                                class="download_cv">Download</button></a>
+                    </div>
+                </div>
+                <div style="padding-top: 10px;"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // hide modal by default
+        document.getElementById("modal_cv").style.display = "none";
+
+        // hover effects
+        function hovercv() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/cv_closed_highlighted.png");
+            if (document.getElementById("modal_cv").style.display == "block") {
+                this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/cv_open_highlighted.png");
+            }
+        }
+
+        function unhovercv() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/cv_closed.png");
+            if (document.getElementById("modal_cv").style.display == "block") {
+                this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/cv_open.png");
+            }
+        }
+
+        // pull up modal
+        function displayModal_cv() {
+            var x = document.getElementById("modal_cv");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                document.getElementById("tabImage_cv").src = "https://andydcotton.com/wp-content/uploads/2021/10/cv_open_highlighted.png";
+            } else {
+                x.style.display = "none";
+                document.getElementById("tabImage_cv").src = "https://andydcotton.com/wp-content/uploads/2021/10/cv_closed_highlighted.png";
+            }
+        }
+
+        //Make the DIV element draggagle:
+        dragElement(document.getElementById("modal_cv"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById("modalHeader_cv")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById("modalHeader_cv").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_cv")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function close() {
+            document.getElementById("modal_cv").style.display = "none";
+            document.getElementById("tabImage_cv").src = "https://andydcotton.com/wp-content/uploads/2021/10/cv_closed.png";
+
+        }
+    </script>
+
+</body>
+
+</html>

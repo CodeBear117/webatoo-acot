@@ -1,0 +1,457 @@
+______________________________________________________________________________________________________________________
+
+Copyright 2021 - Webatoo Design Australia - www.webatoo.com.au
+Webatoo Design Australia designs and develops websites for small Australia businesses
+-------------------------------------------------------------------------------------
+This code is intended for use by andydcotton.com as developed by Webatoo Design Australia.
+Sections of this code have been repurposed from various online sources in good faith.
+------------------------------------------------------------------------------------------
+!CHANGES TO THIS CODE IS STRONGLY CAUTIONED AGAINST!
+Doing so may result in website content breaking or becoming unusable.
+Webatoo is not responsible for any crash or bug fixes if this code document has been found to be edited in any way. 
+-------------------------------------------------------------------------------------------------------------------
+The code below defines the visual style and functionality of the "PORTFOLIO" modal box within andydcotton.com
+The code was devloped by the team at Webatoo Design Australia.
+V 1.1 
+26.10.2021
+-------------------------------------------------------------------------------------------------------------
+______________________________________________________________________________________________________________________
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        #modal_portfolio {
+            position: fixed;
+            left: 40%;
+            top: 30%;
+            z-index: 9999;
+            text-align: center;
+        }
+
+        #modalHeader_portfolio {
+            display: grid;
+            grid-template-columns: 11fr 1fr;
+            cursor: move;
+            position: relative;
+            z-index: 9999;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: #faf0d0;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        /* The Modal (background) - change width to change modal total width */
+        .modal_portfolio {
+            display: none;
+            /* Hidden by default */
+            width: 500px;
+            height: auto;
+            /* Full width */
+            overflow: atuo;
+            /* Enable scroll if needed */
+        }
+
+        /* Modal Content */
+        .modalContent_portfolio {
+            background-color: #faf0d0;
+            margin: auto;
+            padding-left: 2px;
+            padding-right: 2px;
+            border-radius: 15px;
+            padding-bottom: 2px;
+        }
+
+        .modalInnerContent_portfolio {
+            padding: 3px;
+            padding-bottom: 3px;
+            background-color: #262626;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+        }
+
+        /* The Close Button */
+        .close_portfolio {
+            color: #000;
+            display: inline-flex;
+            align-items: center;
+            font-family: helvetica;
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 6px;
+            font-weight: normal;
+            width: 18px;
+            height: 18px;
+            max-height: 30px;
+            border: 2px solid #000;
+        }
+
+        .close_portfolio:hover,
+        .close_portfolio:focus {
+            background-color: #faf0d0;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.2);
+            color: #000;
+            text-decoration: none;
+            border: 2px solid #000;
+            cursor: pointer;
+        }
+
+        /* Carousel */
+        .myContent_portfolio {
+            display: none;
+            /* Hidden by default */
+        }
+
+        /* Slideshow container - change max-height to define maximum total height of the modal */
+        .slideshowContainer_portfolio {
+            max-height: 900px;
+            margin: auto;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: auto;
+            object-fit: contain
+        }
+
+        /* Fading animation */
+        .fade_animation {
+
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Jello modal entrance animation */
+        .jello_animation {
+            -webkit-animation: jello-horizontal 0.9s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
+            animation: jello-horizontal 0.9s cubic-bezier(0.785, 0.135, 0.150, 0.860) both;
+        }
+
+        @-webkit-keyframes jello-horizontal {
+            0% {
+                -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+            }
+
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes jello-horizontal {
+            0% {
+                -webkit-transform: scale3d(0, 0, 0);
+                transform: scale3d(0, 0, 0);
+            }
+
+            30% {
+                -webkit-transform: scale3d(1.25, 0.75, 1);
+                transform: scale3d(1.25, 0.75, 1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(0.75, 1.25, 1);
+                transform: scale3d(0.75, 1.25, 1);
+            }
+
+            50% {
+                -webkit-transform: scale3d(1.15, 0.85, 1);
+                transform: scale3d(1.15, 0.85, 1);
+            }
+
+            65% {
+                -webkit-transform: scale3d(0.95, 1.05, 1);
+                transform: scale3d(0.95, 1.05, 1);
+            }
+
+            75% {
+                -webkit-transform: scale3d(1.05, 0.95, 1);
+                transform: scale3d(1.05, 0.95, 1);
+            }
+
+            100% {
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Tab Button -->
+    <input type="image" name="Portfolio_Tab" onmouseover="hoverPortfolio.call(this)"
+        onmouseout="unhoverPortfolio.call(this)" onclick="displayModal_portfolio()" id="tabImage_portfolio"
+        src="https://andydcotton.com/wp-content/uploads/2021/10/Folder_closed.png" width=90vw height=auto
+        alt="Portfolio_Icon">
+
+
+    <!-- The Modal -->
+    <div id="modal_portfolio" class="modal_portfolio jello_animation">
+
+        <!-- Modal content -->
+        <div class="modalContent_portfolio">
+            <div ID="modalHeader_portfolio">
+                <div></div>
+                <span class="close_portfolio">x</span>
+            </div>
+            <div class="modalInnerContent_portfolio">
+                <h1 style="padding-top:3px">PORTFOLIO</h1>
+                <div class="slideshowContainer_portfolio">
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/All.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/backpack-11.0.jpg"
+                            class="fade_animation" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/backpack-14.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/Bin_Front.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/bin_back.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/Business-Card.png" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/face-expressions.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/fullturn-flat.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/Grave.png" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/greyscale.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/Just-props.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/MilkManMakky.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/PAINT_ANGLE-scaled.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/POSE_1_PAINT.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/Seeker.jpg" />
+                    </div>
+                    <div class="myContent_portfolio fade_animation">
+                        <img src="https://andydcotton.com/wp-content/uploads/2021/10/univeristy.jpg" />
+                    </div>
+                    <div style="padding-top: 10px;"></div>
+                </div>
+                <div>
+                    <input type="image" name="Prev_Slide" onclick="plusSlides(-1)"
+                        onmouseover="hoverPrevSlide.call(this)" onmouseout="unhoverPrevSlide.call(this)"
+                        src="https://andydcotton.com/wp-content/uploads/2021/10/Previous_Arrow.png"
+                        style="padding-right: 5px;" width=5% height=auto alt="prev">
+
+                    <input type="image" name="Next_Slide" onclick="plusSlides(1)"
+                        onmouseover="hoverNextSlide.call(this)" onmouseout="unhoverNextSlide.call(this)"
+                        src="https://andydcotton.com/wp-content/uploads/2021/10/Next_Arrow.png"
+                        style="padding-left: 5px;" width=5% height=auto alt="next">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // hide modal by default
+        document.getElementById("modal_portfolio").style.display = "none";
+
+        // hover effects
+        function hoverPortfolio() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Folder_closed_Highlighted.png");
+            if (document.getElementById("modal_portfolio").style.display == "block") {
+                this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Folder_Open_Highlighted.png");
+            }
+        }
+
+        function unhoverPortfolio() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Folder_closed.png");
+            if (document.getElementById("modal_portfolio").style.display == "block") {
+                this.setAttribute("src", "https://journeyswithjosh.com/wp-content/uploads/2021/10/Folder_Open.png");
+            }
+        }
+
+        function hoverNextSlide() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Next_Arrow_selected.png");
+        }
+
+        function unhoverNextSlide() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Next_Arrow.png");
+        }
+
+        function hoverPrevSlide() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Previous_Arrow_selected.png");
+        }
+
+        function unhoverPrevSlide() {
+            this.setAttribute("src", "https://andydcotton.com/wp-content/uploads/2021/10/Previous_Arrow.png");
+        }
+
+        // pull up modal
+        function displayModal_portfolio() {
+            var x = document.getElementById("modal_portfolio");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                
+                document.getElementById("tabImage_portfolio").src = "https://andydcotton.com/wp-content/uploads/2021/10/Folder_Open_Highlighted.png";
+            } else {
+                x.style.display = "none";
+                document.getElementById("tabImage_portfolio").src = "https://andydcotton.com/wp-content/uploads/2021/10/Folder_closed_Highlighted.png";
+            }
+        }
+
+        //Make the DIV element draggagle:
+        dragElement(document.getElementById("modal_portfolio"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            if (document.getElementById("modalHeader_portfolio")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById("modalHeader_portfolio").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+        //Carousel
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides((slideIndex += n));
+        }
+
+        function currentSlide(n) {
+            showSlides((slideIndex = n));
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("myContent_portfolio");
+
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex - 1].style.display = "block";
+        }
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close_portfolio")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function close() {
+            document.getElementById("modal_portfolio").style.display = "none";
+            document.getElementById("tabImage_portfolio").src = "https://andydcotton.com/wp-content/uploads/2021/10/Folder_closed.png";
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
