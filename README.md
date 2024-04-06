@@ -1,7 +1,5 @@
 # webatoo-acot
-This code was my first coding experience and it was done for a client through my business, Webatoo, in 2021.
-
-The website can be viewed live on https://andydcotton.com/
+This code was my first coding experience. I built a website for a graphic designer who wanted to showcase their work online.
 
 ## Features
 1. This website is designed to simulate a desktop, with app icons and windows.
